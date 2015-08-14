@@ -7,6 +7,13 @@
 <struts>
         <constant name="struts.devMode" value="true"/>
         <package name="basicstruts2" extends="struts-default">
+                
+                <!--默认action-->
+                <default-action-ref name="error"/>
+                <action name="error">
+                        <result>/error.jsp</result>
+                </action>
+                
                 <action name="helloworld" class="com.zhi.action.HelloWorldAction">
                         <result>/helloworld.jsp</result>
                 </action>
