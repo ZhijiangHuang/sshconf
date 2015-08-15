@@ -2,3 +2,4 @@ com\zhi\action\ModelDrivenAction.class
 com\zhi\entity\MessageStore.class
 com\zhi\action\HelloWorldAction.class
 com\zhi\entity\Gangster.class
+com\zhi\action\HelloAnnotation.class

@@ -10,18 +10,28 @@
     <packaging>war</packaging>
     <name>web-struts Maven Webapp</name>
     <url>http://maven.apache.org</url>
+
+    <properties>
+        <struts2version>2.3.24</struts2version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
-            <version>2.3.24</version>
+            <version>${struts2version}</version>
         </dependency>
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-convention-plugin</artifactId>
+            <version>${struts2version}</version>
         </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>junit</groupId>-->
+            <!--<artifactId>junit</artifactId>-->
+            <!--<version>4.12</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <finalName>web-struts</finalName>

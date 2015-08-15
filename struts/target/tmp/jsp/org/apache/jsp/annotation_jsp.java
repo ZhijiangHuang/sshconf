@@ -4,7 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class annotation_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -30,7 +30,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html");
+      response.setContentType("text/html;charset=UTF-8");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -41,10 +41,14 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("<html>\r\n");
+      out.write("<head>\r\n");
+      out.write("    <title>annotation</title>\r\n");
+      out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("<h2>Hello World!china</h2>\r\n");
-      out.write("<a href=\"annotation\">annotation</a>\r\n");
+      out.write("hello annotation\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (Throwable t) {
