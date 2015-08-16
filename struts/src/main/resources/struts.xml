@@ -20,6 +20,12 @@
 
                 <action name="modelDrivenResult" class="com.zhi.action.ModelDrivenAction">
                         <result>/gangster.jsp</result>
+                        <result name="input">/modelDriven.jsp</result>
+                </action>
+        </package>
+        <package name="namespace" extends="struts-default" namespace="/jsp">
+                <action name="namespace" >
+                        <result>/WEB-INF/jsp/namespace.jsp</result>
                 </action>
         </package>
 </struts>
