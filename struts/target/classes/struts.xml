@@ -7,8 +7,17 @@
 <struts>
         <constant name="struts.devMode" value="true"/>
         <constant name="struts.configuration.files" value="true"/>
-        <package name="basicstruts2" extends="struts-default">
-                
+
+        <package name="global" extends="struts-default" namespace="/">
+                <global-results>
+                        <result name="exception">/exception.jsp</result>
+                </global-results>
+                <global-exception-mappings>
+                        <exception-mapping exception="java.lang.Exception" result="exception"></exception-mapping>
+                </global-exception-mappings>
+        </package>
+
+        <package name="basic" extends="struts-default" namespace="/">
                 <!--默认action-->
                 <default-action-ref name="error"/>
                 <action name="error">
@@ -36,6 +45,12 @@
                 </action>
         </package>
         <package name="namespace" extends="struts-default" namespace="/jsp">
+               <global-results>
+                       <result name="exception">/exception.jsp</result>
+               </global-results>
+                <global-exception-mappings>
+                        <exception-mapping exception="java.lang.Exception" result="exception"></exception-mapping>
+                </global-exception-mappings>
                 <action name="namespace" >
                         <result>/WEB-INF/jsp/namespace.jsp</result>
                 </action>
