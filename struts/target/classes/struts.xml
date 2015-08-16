@@ -8,18 +8,21 @@
         <constant name="struts.devMode" value="true"/>
         <constant name="struts.configuration.files" value="true"/>
 
-        <package name="global" extends="struts-default" namespace="/">
+        <package name="basic" extends="struts-default" namespace="/">
+
+                <interceptors>
+                        <interceptor name="authInterceptor" class="com.zhi.interceptor.AuthenticationInterceptor"/>
+                </interceptors>
+                <!--默认action-->
+                <default-action-ref name="error"/>
+
+                <!--全局的exception-->
                 <global-results>
                         <result name="exception">/exception.jsp</result>
                 </global-results>
                 <global-exception-mappings>
                         <exception-mapping exception="java.lang.Exception" result="exception"></exception-mapping>
                 </global-exception-mappings>
-        </package>
-
-        <package name="basic" extends="struts-default" namespace="/">
-                <!--默认action-->
-                <default-action-ref name="error"/>
                 <action name="error">
                         <result>/error.jsp</result>
                 </action>
@@ -42,6 +45,18 @@
                                 <param name="maximumSize">1025956</param>
                         </interceptor-ref>
                         <interceptor-ref name="defaultStack" />
+                </action>
+
+                <action name="login" class="com.zhi.action.AuthAction">
+                        <result>index.jsp</result>
+                        <result name="input">/login.jsp</result>
+                </action>
+
+                <action name="authInterceptor" >
+                        <result name="success">/WEB-INF/jsp/auth.jsp</result>
+                        <result name="input">/login.jsp</result>
+                        <interceptor-ref name="defaultStack" />
+                        <interceptor-ref name="authInterceptor"/>
                 </action>
         </package>
         <package name="namespace" extends="struts-default" namespace="/jsp">

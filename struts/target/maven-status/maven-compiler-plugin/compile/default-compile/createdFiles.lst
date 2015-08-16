@@ -1,6 +1,8 @@
-com\zhi\action\ModelDrivenAction.class
 com\zhi\entity\MessageStore.class
+com\zhi\action\AuthAction.class
+com\zhi\action\ModelDrivenAction.class
 com\zhi\action\HelloWorldAction.class
 com\zhi\entity\Gangster.class
 com\zhi\action\HelloAnnotation.class
 com\zhi\action\FileUploadAction.class
+com\zhi\interceptor\AuthenticationInterceptor.class
