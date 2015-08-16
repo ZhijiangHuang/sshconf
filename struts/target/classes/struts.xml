@@ -6,6 +6,7 @@
 
 <struts>
         <constant name="struts.devMode" value="true"/>
+        <constant name="struts.configuration.files" value="true"/>
         <package name="basicstruts2" extends="struts-default">
                 
                 <!--默认action-->
@@ -21,6 +22,17 @@
                 <action name="modelDrivenResult" class="com.zhi.action.ModelDrivenAction">
                         <result>/gangster.jsp</result>
                         <result name="input">/modelDriven.jsp</result>
+                </action>
+
+                <action name="imageUpload" class="com.zhi.action.FileUploadAction">
+                        <param name="savePath">/images</param>
+                        <result>/uploadSuccess.jsp</result>
+                        <result name="input">/imageUpload.jsp</result>
+                        <interceptor-ref name="fileUpload">
+                                <param name="allowedTypes">image/bmp,image/png,image/gif,image/jpeg</param>
+                                <param name="maximumSize">1025956</param>
+                        </interceptor-ref>
+                        <interceptor-ref name="defaultStack" />
                 </action>
         </package>
         <package name="namespace" extends="struts-default" namespace="/jsp">
