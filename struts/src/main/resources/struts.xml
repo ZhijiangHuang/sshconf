@@ -58,6 +58,14 @@
                         <interceptor-ref name="defaultStack" />
                         <interceptor-ref name="authInterceptor"/>
                 </action>
+
+                <action name="dataTransfer" class="com.zhi.action.DataTransferAction">
+                        <result>/dataTransferResult.jsp</result>
+                </action>
+
+                <action name="typeConversionAction" class="com.zhi.action.TypeConversionAction">
+                        <result>/typeConversion.jsp</result>
+                </action>
         </package>
         <package name="namespace" extends="struts-default" namespace="/jsp">
                <global-results>

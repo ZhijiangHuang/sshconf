@@ -3,6 +3,8 @@ package com.zhi.action;
 import com.opensymphony.xwork2.ActionSupport;
 import org.apache.struts2.interceptor.SessionAware;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -29,4 +31,7 @@ public class AuthAction extends ActionSupport implements SessionAware{
     public void setSession(Map<String, Object> map) {
         seesion = map;
     }
+
+
+
 }
