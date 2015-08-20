@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        <mapper namespace="com.zhi.dao.StudentMapper">
+    <resultMap id="StudentResult" type="Student">
+            <id property="studentId" column="student_id"/>
+            <result property="name" column="name"/>
+            <result property="email" column="email"/>
+            <result property="dob" column="dob"/>
+    </resultMap>
+        <select id="findStudentById" parameterType="int" resultMap="StudentResult">
+                SELECT * from students where student_id=#{id}
+        </select>
+</mapper>
